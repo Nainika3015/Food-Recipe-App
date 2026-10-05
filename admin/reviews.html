@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Reviews – CraveCart Admin</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f59f00' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M17 21a1 1 0 0 0 1-1v-5.35c0-.457.316-.844.727-1.041a4 4 0 0 0-2.134-7.589 5 5 0 0 0-9.186 0 4 4 0 0 0-2.134 7.588c.411.198.727.585.727 1.041V20a1 1 0 0 0 1 1Z'/%3E%3Cpath d='M6 17h12'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body data-page="admin-reviews" class="admin-body">
+  <div class="admin-shell">
+    <aside class="admin-sidebar" id="admin-sidebar"></aside>
+
+    <main class="admin-main">
+      <div class="admin-topbar">
+        <div>
+          <h1>⭐ Manage Reviews</h1>
+          <div class="sub">Moderate community ratings and written reviews</div>
+        </div>
+        <div class="admin-top-actions">
+          <button class="admin-burger" id="admin-burger">☰</button>
+        </div>
+      </div>
+
+      <div class="admin-toolbar">
+        <div class="form-group" style="margin:0; min-width:220px;">
+          <select id="admin-review-filter" class="form-control">
+            <option value="">All Ratings</option>
+            <option value="5">5 Star Only</option>
+            <option value="low">Low Ratings (≤2)</option>
+          </select>
+        </div>
+        <span class="result-count" id="admin-review-count"></span>
+      </div>
+
+      <div id="admin-reviews-list"></div>
+    </main>
+  </div>
+
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+  <script src="../js/storage.js"></script>
+  <script src="../js/navigation.js"></script>
+  <script src="../js/recipes.js"></script>
+  <script src="../js/admin.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/app.js"></script>
+</body>
+</html>

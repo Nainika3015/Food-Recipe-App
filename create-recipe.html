@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Recipe – CraveCart</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f59f00' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M17 21a1 1 0 0 0 1-1v-5.35c0-.457.316-.844.727-1.041a4 4 0 0 0-2.134-7.589 5 5 0 0 0-9.186 0 4 4 0 0 0-2.134 7.588c.411.198.727.585.727 1.041V20a1 1 0 0 0 1 1Z'/%3E%3Cpath d='M6 17h12'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/user.css">
+</head>
+<body data-page="create-recipe">
+  <div class="page-wrap">
+    <header class="navbar" id="fb-navbar"></header>
+
+    <main class="page-main">
+      <div class="page-head">
+        <div class="container">
+          <h1 id="page-title">👨‍🍳 Create New Recipe</h1>
+          <p>Share your signature dish with the CraveCart community.</p>
+        </div>
+      </div>
+
+      <div class="container section-pad" style="padding-top:0;">
+        <form class="form-card" id="create-recipe-form" novalidate>
+          <div class="form-group">
+            <label for="cr-name">Recipe Name <span class="req">*</span></label>
+            <input type="text" id="cr-name" class="form-control" placeholder="e.g. Spicy Garlic Noodles" maxlength="80">
+          </div>
+
+          <div class="form-group">
+            <label for="cr-desc">Description <span class="req">*</span></label>
+            <textarea id="cr-desc" class="form-control" placeholder="Describe your dish — what makes it special? (min 10 characters)" maxlength="400"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="cr-image">Image URL <span class="req">*</span></label>
+            <input type="url" id="cr-image" class="form-control" placeholder="https://images.unsplash.com/photo-...">
+            <div class="form-hint">Tip: paste any food photo URL (e.g. from Unsplash).</div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="cr-cuisine">Cuisine <span class="req">*</span></label>
+              <select id="cr-cuisine">
+                <option value="">Select cuisine</option>
+                <option>Indian</option>
+                <option>Italian</option>
+                <option>Chinese</option>
+                <option>Mexican</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="cr-category">Category <span class="req">*</span></label>
+              <select id="cr-category">
+                <option value="">Select category</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="cr-diet">Dietary Preference <span class="req">*</span></label>
+              <select id="cr-diet">
+                <option value="">Select preference</option>
+                <option>Vegetarian</option>
+                <option>Vegan</option>
+                <option>Non-Vegetarian</option>
+                <option>Gluten Free</option>
+                <option>High Protein</option>
+                <option>Low Calorie</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="cr-difficulty">Difficulty <span class="req">*</span></label>
+              <select id="cr-difficulty">
+                <option value="">Select difficulty</option>
+                <option>Easy</option>
+                <option>Medium</option>
+                <option>Hard</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="cr-prep">Preparation Time (min) <span class="req">*</span></label>
+              <input type="number" id="cr-prep" class="form-control" min="0" placeholder="e.g. 15">
+            </div>
+            <div class="form-group">
+              <label for="cr-cook">Cooking Time (min) <span class="req">*</span></label>
+              <input type="number" id="cr-cook" class="form-control" min="0" placeholder="e.g. 25">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="cr-servings">Servings <span class="req">*</span></label>
+              <input type="number" id="cr-servings" class="form-control" min="1" placeholder="e.g. 4">
+            </div>
+            <div class="form-group">
+              <label for="cr-tags">Tags</label>
+              <input type="text" id="cr-tags" class="form-control" placeholder="comma, separated, tags">
+            </div>
+          </div>
+
+          <!-- Ingredients -->
+          <div class="form-group">
+            <label>Ingredients <span class="req">*</span> <span class="muted small">(at least 2)</span></label>
+            <div class="dyn-list" id="ing-list"></div>
+            <button type="button" class="btn btn-ghost btn-sm" id="add-ing">+ Add Ingredient</button>
+          </div>
+
+          <!-- Instructions -->
+          <div class="form-group">
+            <label>Instruction Steps <span class="req">*</span> <span class="muted small">(at least 2)</span></label>
+            <div class="dyn-list" id="step-list"></div>
+            <button type="button" class="btn btn-ghost btn-sm" id="add-step">+ Add Step</button>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block" id="submit-btn">🍳 Publish Recipe</button>
+        </form>
+      </div>
+    </main>
+
+    <footer class="footer" id="fb-footer"></footer>
+  </div>
+
+  <script src="js/storage.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/recipes.js"></script>
+  <script src="js/collections.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

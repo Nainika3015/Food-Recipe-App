@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Collections – CraveCart</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f59f00' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M17 21a1 1 0 0 0 1-1v-5.35c0-.457.316-.844.727-1.041a4 4 0 0 0-2.134-7.589 5 5 0 0 0-9.186 0 4 4 0 0 0-2.134 7.588c.411.198.727.585.727 1.041V20a1 1 0 0 0 1 1Z'/%3E%3Cpath d='M6 17h12'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/user.css">
+</head>
+<body data-page="collections">
+  <div class="page-wrap">
+    <header class="navbar" id="fb-navbar"></header>
+
+    <main class="page-main">
+      <div class="page-head">
+        <div class="container">
+          <h1>📁 My Collections</h1>
+          <p>Organise recipes into personal cookbooks — breakfast lists, dinner ideas, party food and more.</p>
+        </div>
+      </div>
+
+      <div class="container section-pad" style="padding-top:0;">
+        <!-- Grid of collections -->
+        <div id="collections-view">
+          <div class="collections-grid" id="collections-grid"></div>
+        </div>
+
+        <!-- Single collection detail -->
+        <div id="collection-detail" style="display:none;">
+          <div class="flex-between mb-3">
+            <div>
+              <h2 class="section-title" id="detail-title">Collection</h2>
+              <span class="muted small" id="detail-count">0 recipes</span>
+            </div>
+            <button class="btn btn-ghost" id="detail-back">← All Collections</button>
+          </div>
+          <div class="rows-list" id="collection-recipes"></div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer" id="fb-footer"></footer>
+  </div>
+
+  <script src="js/storage.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/recipes.js"></script>
+  <script src="js/collections.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

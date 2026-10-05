@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore Recipes – CraveCart</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f59f00' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M17 21a1 1 0 0 0 1-1v-5.35c0-.457.316-.844.727-1.041a4 4 0 0 0-2.134-7.589 5 5 0 0 0-9.186 0 4 4 0 0 0-2.134 7.588c.411.198.727.585.727 1.041V20a1 1 0 0 0 1 1Z'/%3E%3Cpath d='M6 17h12'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/user.css">
+</head>
+<body data-page="explore">
+  <div class="page-wrap">
+    <header class="navbar" id="fb-navbar"></header>
+
+    <main class="page-main">
+      <div class="page-head">
+        <div class="container">
+          <h1>🔍 Explore Recipes</h1>
+          <p>Search by name, ingredient or cuisine — then filter by diet, difficulty and time.</p>
+        </div>
+      </div>
+
+      <div class="container section-pad" style="padding-top:0;">
+        <div class="explore-layout">
+          <!-- Filters sidebar -->
+          <aside class="filter-panel">
+            <h3>⚙️ Filters</h3>
+            <div class="filter-group">
+              <h4>Category Chips</h4>
+              <div id="explore-cats" style="display:flex; flex-wrap:wrap; gap:6px;"></div>
+            </div>
+            <div class="filter-group">
+              <h4>Cuisine</h4>
+              <select id="filter-cuisine">
+                <option value="">All Cuisines</option>
+                <option value="Indian">Indian</option>
+                <option value="South Indian">South Indian</option>
+                <option value="Italian">Italian</option>
+                <option value="Chinese">Chinese</option>
+                <option value="Mexican">Mexican</option>
+                <option value="American">American</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <h4>Dietary Preference</h4>
+              <select id="filter-diet">
+                <option value="">All Diets</option>
+                <option value="Vegetarian">Vegetarian</option>
+                <option value="Vegan">Vegan</option>
+                <option value="Non-Vegetarian">Non-Vegetarian</option>
+                <option value="Gluten Free">Gluten Free</option>
+                <option value="High Protein">High Protein</option>
+                <option value="Low Calorie">Low Calorie</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <h4>Difficulty</h4>
+              <select id="filter-difficulty">
+                <option value="">Any Level</option>
+                <option value="Easy">Easy</option>
+                <option value="Medium">Medium</option>
+                <option value="Hard">Hard</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <h4>Max Total Time (min)</h4>
+              <input type="number" id="filter-maxtime" min="0" placeholder="e.g. 30">
+            </div>
+            <div class="filter-group">
+              <h4>Sort By</h4>
+              <select id="filter-sort">
+                <option value="rating">Highest Rated</option>
+                <option value="popular">Most Popular</option>
+                <option value="newest">Newest</option>
+                <option value="time">Quickest</option>
+              </select>
+            </div>
+            <div class="filter-actions">
+              <button class="btn btn-outline btn-sm" id="filter-reset">↺ Reset Filters</button>
+            </div>
+          </aside>
+
+          <!-- Results -->
+          <div>
+            <div class="explore-topbar">
+              <div class="explore-search">
+                <input type="text" id="explore-search" placeholder="Search recipes, ingredients or cuisines...">
+              </div>
+              <span class="result-count" id="result-count"></span>
+            </div>
+            <div class="active-filters" id="active-filters"></div>
+            <div class="recipe-grid" id="explore-grid"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer" id="fb-footer"></footer>
+  </div>
+
+  <script src="js/storage.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/recipes.js"></script>
+  <script src="js/collections.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
